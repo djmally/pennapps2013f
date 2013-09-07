@@ -23,6 +23,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Get Directions"
-            android:id="@+id/button"/>
+            android:id="@+id/button"
+            android:onClick="getDirections"/>
 </LinearLayout>
 
