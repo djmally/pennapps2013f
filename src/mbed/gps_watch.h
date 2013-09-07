@@ -12,6 +12,11 @@ Motor motor6(p26, p15, p16);
 
 Motor motor_arr[6] = {motor1, motor2, motor3, motor4, motor5, motor6}; 
 
+DigitalOut led1(LED1);
+DigitalOut led2(LED2);
+DigitalOut led3(LED3);
+DigitalOut led4(LED4);
+
 void vibrate_motor(int motor_num);
 
 void set_mode(char new_mode);

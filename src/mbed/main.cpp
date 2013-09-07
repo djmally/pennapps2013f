@@ -23,13 +23,17 @@ void get_turn(){
 }
 
 void error_code(){
-   LED1 = 1; 
-   LED2 = 1; 
-   LED3 = 1; 
-   LED4 = 1; 
+   led1 = 1; 
+   led2 = 1; 
+   led3 = 1; 
+   led4 = 1; 
    wait(0.5);
-   LED1 = 0; 
-   LED2 = 0; 
-   LED3 = 0; 
-   LED4 = 0; 
+   led1 = 0; 
+   led2 = 0; 
+   led3 = 0; 
+   led4 = 0; 
+}
+
+int main(){
+    return 0;
 }
