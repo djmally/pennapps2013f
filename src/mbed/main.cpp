@@ -6,8 +6,6 @@ void vibrate_motor(int motor_num){
         return;
     }
     motor_arr[motor_num].speed(0.5f);
-    wait(3);
-    motor_arr[motor_num].speed(0.0f);
 }
 
 void set_mode(char new_mode){
@@ -18,8 +16,30 @@ void set_mode(char new_mode){
     mode = new_mode;
 }
 
-void get_turn(){
-
+void get_turn(char motor_to_turn){
+    if(((motor_to_turn << 7) >> 7) == 1){
+        vibrate_motor(0);
+    }
+    if(((motor_to_turn << 6) >> 7) == 1){
+        vibrate_motor[1];
+    }
+    if(((motor_to_turn << 5) >> 7) == 1){
+	vibrate_motor[2];
+    }
+    if(((motor_to_turn << 4) >> 7) == 1){
+        vibrate_motor[3];
+    }
+    if(((motor_to_turn << 3) >> 7) == 1){
+        vibrate_motor[4];
+    }
+    if(((motor_to_turn << 2) >> 7) == 1){
+	vibrate_motor[5];
+    }
+    wait(3);
+    for(int i = 0; i < 6; i++)
+    {
+        motor_arr[motor_num].speed(0.0f);
+    }
 }
 
 void error_code(){

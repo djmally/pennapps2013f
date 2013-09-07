@@ -21,6 +21,6 @@ void vibrate_motor(int motor_num);
 
 void set_mode(char new_mode);
 
-void get_turn();
+void get_turn(char motor_to_turn);
 
 void error_code();
