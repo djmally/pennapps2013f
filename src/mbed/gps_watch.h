@@ -17,6 +17,9 @@ DigitalOut led2(LED2);
 DigitalOut led3(LED3);
 DigitalOut led4(LED4);
 
+DigitalOut bt_tx(p19);
+DigitalIn bt_rx(p20);
+
 void vibrate_motor(int motor_num);
 
 void set_mode(char new_mode);

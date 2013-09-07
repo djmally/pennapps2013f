@@ -1,5 +1,20 @@
 #include "gps_watch.h"
 
+int bluetooth_test(){
+    if(bt_rx){
+        led1 = 1;
+        led2 = 0;
+        led3 = 1;
+        led4 = 0;
+    }
+    wait(5);
+    led1 = 0;
+    led2 = 0;
+    led3 = 0;
+    led4 = 0;
+}
+
+//Vibrates one motor between motor 0 and motor 5 at 1/2 speed for 3 seconds
 void vibrate_motor(int motor_num){
     if(motor_num < 0 || motor_num > 5){
         error_code();
@@ -8,6 +23,7 @@ void vibrate_motor(int motor_num){
     motor_arr[motor_num].speed(0.5f);
 }
 
+//Modes: GPS, Compass, Find my phone
 void set_mode(char new_mode){
     if(new_mode != 'g' && new_mode != 'c' && new_mode != 'f'){
         error_code();
@@ -16,6 +32,7 @@ void set_mode(char new_mode){
     mode = new_mode;
 }
 
+//Get a GPS turn direction from bluetooth
 void get_turn(char motor_to_turn){
     if(((motor_to_turn << 7) >> 7) == 1){
         vibrate_motor(0);
@@ -40,8 +57,8 @@ void get_turn(char motor_to_turn){
     {
         motor_arr[motor_num].speed(0.0f);
     }
-}
 
+//Flashes the error code on the mbed's LEDs
 void error_code(){
    led1 = 1; 
    led2 = 1; 
@@ -55,5 +72,5 @@ void error_code(){
 }
 
 int main(){
-    return 0;
+    bluetooth_test();
 }
