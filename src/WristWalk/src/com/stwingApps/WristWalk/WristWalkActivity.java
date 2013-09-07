@@ -2,6 +2,7 @@ package com.stwingApps.WristWalk;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.bluetooth.*;
 
 public class WristWalkActivity extends Activity {
     /**
@@ -11,5 +12,9 @@ public class WristWalkActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+    }
+
+    public void onPause() {
+
     }
 }
