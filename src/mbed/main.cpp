@@ -20,7 +20,7 @@ void vibrate_motor(int motor_num){
         error_code();
         return;
     }
-    motor_arr[motor_num].speed(0.5f);
+    motor_arr[motor_num] = 1;
 }
 
 //Modes: GPS, Compass, Find my phone
